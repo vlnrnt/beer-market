@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <article class="galery"></article>
+    <script src="data.js"></script>
+    <script src="template-engine.js"></script>
+    <script>
+      const recipes = JSON.parse(beer);
+      const galery = document.querySelector(".galery");
+
+      function beerEngine(recipe) {
+        return {
+          tag: "div",
+          cls: "beer_box",
+          content: [
+            {
+              tag: "div",
+              cls: "beer_name",
+              content: recipe.name,
+            },
+            {
+              tag: "img",
+              cls: "beer_image",
+              attrs: {
+                src: recipe.image_url,
+              },
+            },
+            {
+              tag: "div",
+              cls: "beer_tagline",
+              content: recipe.tagline,
+            },
+            {
+              tag: "div",
+              cls: "beer_adv",
+              content: `${recipe.abv} % alcohol`,
+            },
+          ],
+        };
+      }
+
+      galery.appendChild(templateEngine(recipes.map(beerEngine)));
+      
+    </script>
+  </body>
+</html>

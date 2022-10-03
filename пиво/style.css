@@ -1,0 +1,40 @@
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.galery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 32px;
+}
+.beer_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 350px;
+  background-color: rgb(232, 222, 222);
+  border-radius: 20px;
+  gap: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.beer_image {
+  height: 200px;
+  width: 60px;
+}
+
+.beer_name {
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 12px;
+}
+
+.beer_tagline {
+  text-align: center;
+}
